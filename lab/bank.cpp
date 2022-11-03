@@ -1,3 +1,5 @@
+/*This application take name as a input and gives a random account number. A user can deposit,withdraw or see the acount information */
+
 #include<bits/stdc++.h>
 using namespace std;
 
