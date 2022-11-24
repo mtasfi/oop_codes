@@ -81,14 +81,16 @@ int main() {
 			string t, a;
 			int e, c, s;
 			cout << "Enter book title" << endl;
-			cin >> t;
+			//cin >> t;
+			cin.ignore(); getline(cin, t);
 
 			int found = -1;
 			found = searchBook(obj, idx, t);
 
 			if (found == -1) {
 				cout << "Enter book Author" << endl;
-				cin >> a;
+				//cin >> a;
+				getline(cin, a);
 				cout << "Enter book Edition" << endl;
 				cin >> e;
 				cout << "Enter book copies" << endl;
@@ -110,7 +112,8 @@ int main() {
 		else if (x == 2) {
 			cout << "Enter the book title" << endl;
 			string s;
-			cin >> s;
+			//cin >> s;
+			cin.ignore(); getline(cin, s);
 			int found = -1;
 			found = searchBook(obj, idx, s);
 
@@ -125,7 +128,8 @@ int main() {
 		else if (x == 3) {
 			cout << "Enter the book title" << endl;
 			string s;
-			cin >> s;
+			//cin >> s;
+			cin.ignore(); getline(cin, s);
 			int found = searchBook(obj, idx, s);
 			if (found != -1)obj[found].display();
 			else cout << "Not Found!" << endl;
