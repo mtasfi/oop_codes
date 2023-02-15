@@ -23,7 +23,7 @@ class current:public account{
     int balance=0;
 
 public:
-    current(string s):account(s,rand(),"CURRENT"){}
+    current(string s,int n):account(s,n,"CURRENT"){}
 
     void deposit(int x){
         balance+=x;
@@ -50,7 +50,7 @@ class saving:public account{
     int balance=0;
 
 public:
-    saving(string s):account(s,rand(),"SAVING"){}
+    saving(string s,int n):account(s,n,"SAVING"){}
 
     void deposit(int x){
         balance+=x;
@@ -81,12 +81,13 @@ cout<<3<<". Show"<<endl<<endl;
 
 
 int main(){
-    srand(time(0));
-
     cout<<"Welcome to ASFI Bank"<<endl;
     string s;
     cout<<"Please Enter Your Name"<<endl;
     getline(cin,s);
+    int n;
+    cout<<"Please Enter Your Account Number"<<endl;
+    cin>>n;
     cout<<endl;
     cout<<"Hi "<<s<<" , Select Your Account Type:"<<endl<<1<<". Current"<<endl<<2<<". Saving"<<endl;
     int t;
@@ -94,7 +95,7 @@ int main(){
     system("CLS");
 
     if(t==1){
-        current usr(s);
+        current usr(s,n);
         usr.show();
         cout<<endl;
 
@@ -127,7 +128,7 @@ int main(){
         }
     }
     else {
-        saving usr(s);
+        saving usr(s,n);
         usr.show();
         cout<<endl;
 
